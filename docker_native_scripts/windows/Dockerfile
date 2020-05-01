@@ -15,7 +15,7 @@ RUN cinst -y git
 
 # ===== Git Checkout latest Kinesis Video Streams Producer SDK (CPP) =======================================
 
-RUN git clone https://github.com/awslabs/amazon-kinesis-video-streams-producer-sdk-cpp.git
+RUN git clone https://github.com/jonmnick/aws-kinesis-cpp-sdk.git
 
 # ===== Build the Producer SDK (CPP) using Microsoft Visual C++ =============================================
 WORKDIR /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/

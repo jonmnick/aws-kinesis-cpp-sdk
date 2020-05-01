@@ -35,7 +35,7 @@ RUN wget https://cmake.org/files/v3.2/cmake-3.2.3-Linux-x86_64.tar.gz && \
 ENV PATH=/cmake-3.2.3-Linux-x86_64/bin/:$PATH
 WORKDIR /opt/
 
-RUN git clone https://github.com/awslabs/amazon-kinesis-video-streams-producer-sdk-cpp.git
+RUN git clone https://github.com/jonmnick/aws-kinesis-cpp-sdk.git
 
 WORKDIR /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
 
