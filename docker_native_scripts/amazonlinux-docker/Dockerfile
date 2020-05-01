@@ -37,7 +37,7 @@ WORKDIR /opt/
 
 RUN git clone https://github.com/jonmnick/aws-kinesis-cpp-sdk.git
 
-WORKDIR /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
+WORKDIR /opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/
 
 RUN chmod a+x ./install-script
 # ================  Build producer sdk and gstreamer plugin ================================================
@@ -46,8 +46,8 @@ RUN chmod +x install-script
 RUN ./install-script -j 4 -d
 
 # Set environment variables for plugin and libraries
-ENV LD_LIBRARY_PATH=/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/downloads/local/lib:$LD_LIBRARY_PATH
-ENV GST_PLUGIN_PATH=/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/downloads/local/lib
-ENV PATH=/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/downloads/local/bin:/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build:$PATH
+ENV LD_LIBRARY_PATH=/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/downloads/local/lib:$LD_LIBRARY_PATH
+ENV GST_PLUGIN_PATH=/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/downloads/local/lib
+ENV PATH=/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/downloads/local/bin:/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build:$PATH
 
-WORKDIR /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
+WORKDIR /opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/

@@ -25,19 +25,19 @@ RUN git clone https://github.com/jonmnick/aws-kinesis-cpp-sdk.git
 
 # ================ Build the Producer SDK (CPP) ============================================================
 
-WORKDIR /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
+WORKDIR /opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/
 RUN  chmod a+x ./install-script
 RUN ./install-script -j 4 -d
 RUN ./java-install-script
 
-COPY start_rtsp_in_docker.sh /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
-ENV LD_LIBRARY_PATH=/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/downloads/local/lib:$LD_LIBRARY_PATH
-ENV GST_PLUGIN_PATH=/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/downloads/local/lib
-ENV PATH=/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/downloads/local/bin:/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build:$PATH
+COPY start_rtsp_in_docker.sh /opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/
+ENV LD_LIBRARY_PATH=/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/downloads/local/lib:$LD_LIBRARY_PATH
+ENV GST_PLUGIN_PATH=/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/downloads/local/lib
+ENV PATH=/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/downloads/local/bin:/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build:$PATH
 RUN chmod a+x ./start_rtsp_in_docker.sh
 
 # comment the following step if you would like to customize the docker image build
-ENTRYPOINT ["/opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/start_rtsp_in_docker.sh"]
+ENTRYPOINT ["/opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/start_rtsp_in_docker.sh"]
 
 # ====  How to build docker image and run the container once its built =====================================
 #

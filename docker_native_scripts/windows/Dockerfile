@@ -18,7 +18,7 @@ RUN cinst -y git
 RUN git clone https://github.com/jonmnick/aws-kinesis-cpp-sdk.git
 
 # ===== Build the Producer SDK (CPP) using Microsoft Visual C++ =============================================
-WORKDIR /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
+WORKDIR /opt/aws-kinesis-cpp-sdk/kinesis-video-native-build/
 
 RUN "vs-buildtools-install.bat && windows-install.bat 64 && vs_buildtools.exe uninstall --wait --quiet --installPath C:\BuildTools" 
 COPY start_rtsp_in_docker.bat /opt/amazon-kinesis-video-streams-producer-sdk-cpp/kinesis-video-native-build/
